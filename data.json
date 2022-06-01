@@ -1,0 +1,27 @@
+{ "data": [
+        {
+            "title": "A Behavioral Intervention for War-Affected Youth in Sierra Leone",
+            "summary": "Children, adolescents, and youth that are exposed to violence are associated with psychological distress in the form of depression, anxiety, PTSD, and difficulty with regulating anger and emotions. This project works to address the mental health consequences of war."
+        },
+        {
+            "title": "mHealth Tools to Improve Service Delivery Quality of an Evidence-Based Family Home Visiting Intervention in Sierra Leone",
+            "summary": "This study addresses critical healthcare workforce limitations in Sierra Leone by piloting a family-focused, behavioral health intervention and developing innovative mobile health tools. This will provide evidence-based mental health services to reduce family violence and improve healthcare delivery and quality."
+        },
+        {
+            "title": "Using Human-Centered Design and Co-Design Methodology to Engage Resettled Refugee Communities in Developing a Digital App for the Family Strengthening Intervention for Refugees",
+            "summary": "With support from Boston College Internal Funding – Academic Technology Innovation Grant (ATIG) the RPCA is working to create digital applications for the FSI-R manual. This includes an app for the interventionist as well as a family-facing app that can be used to engage families. The proposed project leverages progress over the last two years to digitally adapt the Family Strengthening Intervention for Refugees (FSI-R) in order to: 1) increase functionality and interactivity of our digital apps; 2) conduct co-design with end-users to increase culturally- and linguistically- appropriate features for the client-facing app; and 3) conduct theater testing with a small sample of families from each community."
+        },
+        {
+            "title": "Sugira Muryango 'Strong Families, Thriving Children'",
+            "summary": "Sugira Muryango home-visiting program is an evidence-based intervention that offers active coaching for caregivers by community lay-workers trained to deliver sessions including early stimulation promotion, play, nutrition, hygiene, non-violent discipline and responsive parenting. It is based on the Family Strengthening Intervention (FSI) model originally developed and tested in Rwanda. Sugira Muryango empowers low-income families enrolled in Rwanda's social protection system to support early childhood development and healthy family functioning."
+        },
+        {
+            "title": "Stigma and Acceptance of Sierra Leone’s Child Soldiers: A Prospective Longitudinal Study of Adult Mental Health and Social Functioning",
+            "summary": "This project investigates the associations of war and post-conflict factors with mental health among Sierra Leone's former child soldiers as adults. It explores how stigma and familial or community support impact post-conflict life courses."
+        },
+        {
+            "title": "Family-Based Promotion of Mental Health in Children Affected by HIV: A Pilot Randomized Controlled Trial",
+            "summary": "Children affected by HIV are at risk for poor mental health. We conducted a pilot randomized controlled trial of the Family Strengthening Intervention (FSI-HIV), a family home-visiting intervention to promote mental health and improve parent–child relationships in families with caregivers living with HIV, hypothesizing that child and family outcomes would be superior to usual care social work services."
+        }
+    ]
+}
