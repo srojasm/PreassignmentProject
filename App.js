@@ -2,32 +2,36 @@ import React, { useEffect, useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import Topics from './data.json';
 import { FlatList, SafeAreaView, TextInput, StyleSheet, Text, View } from 'react-native';
+//import { CenterFocusStrong } from "@material-ui/icons";
 //import { json } from "express/lib/response";
 
 export default function App() {
   const [search, setSearch] = useState('');
+  const [toggle, setToggle] = useState(false);
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
     setFilteredDataSource(Topics.data);
     setMasterDataSource(Topics.data);
-  },[]);
+  }, []);
 
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
     if (text) {
       const searchString = text.toLowerCase();
-      const newData = masterDataSource.filter( (item) =>{
-        return(
+      const newData = masterDataSource.filter((item) => {
+        return (
           item.title.toLowerCase().includes(searchString)
         );
-        });
+      });
       setFilteredDataSource(newData);
       setSearch(text);
+      setToggle(true);
     } else {
       setFilteredDataSource(masterDataSource);
       setSearch(text);
+      setToggle(false);
     }
   };
 
@@ -36,6 +40,7 @@ export default function App() {
       // Flat List Item
       <Text style={styles.itemStyle} >
         <Text style={styles.title}>{item.title}</Text>
+        <Text>{'\n'}</Text>
         <Text style={styles.summary}>{item.summary}</Text>
       </Text>
     );
@@ -46,9 +51,9 @@ export default function App() {
       // Flat List Item Separator
       <View
         style={{
-          height: 0.5,
+          height: 25,
           width: '100%',
-          backgroundColor: '#C8C8C8',
+          backgroundColor: 'white',
         }}
       />
     );
@@ -57,25 +62,28 @@ export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        <Text>
-          Research Program on Children and Adversity
-        </Text>
-        <Text>
-          Research Projects
-        </Text>
-        <TextInput
-          style={styles.textInputStyle}
-          onChangeText={(text) => searchFilterFunction(text)}
-          value={search}
-          underlineColorAndroid="transparent"
-          placeholder="Search Here"
-        />
-        <FlatList
-          data={filteredDataSource}
-          keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={ItemSeparatorView}
-          renderItem={ItemView}
-        />
+        <View style={styles.titleBox}>
+          <Text style={styles.pageTitle}>
+            Research Program on Children and Adversity
+          </Text>
+        </View>
+        <View style={styles.mainBox}>
+          <Text style={styles.research}>
+            Research Projects
+          </Text>
+          <TextInput
+            style={[styles.textInputStyle, {borderColor: !toggle ? 'black' : '#F3AD41'}]}
+            onChangeText={(text) => searchFilterFunction(text)}
+            value={search}
+            underlineColorAndroid="transparent"
+            placeholder="Search Titles"
+          />
+          <FlatList
+            data={filteredDataSource}
+            ItemSeparatorComponent={ItemSeparatorView}
+            renderItem={ItemView}
+          />
+        </View>
       </View>
     </SafeAreaView>
 
@@ -88,22 +96,48 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 20,
+    borderColor: 'white'
   },
   title: {
-    fontSize: 15,
+    fontSize: 17,
   },
   summary: {
-    fontSize: 10,
+    fontSize: 12,
   },
   itemStyle: {
-    padding: 10,
+    padding: 13,
+    borderWidth: 1,
+    borderColor: '#E2D06D',
+    borderRadius: 3
   },
   textInputStyle: {
     height: 40,
-    margin: 12,
     borderWidth: 1,
     padding: 10,
-    borderColor: '#009688',
+    marginBottom: 15,
+    marginTop: 10,
     backgroundColor: '#FFFFFF',
+    borderRadius: 3
   },
+  pageTitle: {
+    fontSize: 27,
+    textAlign: 'center',
+    padding: 10,
+    color: 'white'
+  },
+  titleBox: {
+    backgroundColor: '#063779',
+    width: '100%'
+  },
+  research: {
+    fontSize: 21,
+    paddingTop: 15,
+    textAlign: 'left',
+    width: '100%'
+  },
+  mainBox: {
+    margin: 10,
+    flex: 1
+  }
 });
